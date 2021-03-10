@@ -40,7 +40,7 @@ set :puma_init_active_record, false # Change to true if using ActiveRecord
 set :log_level, :info
 set :keep_releases, 5
 
-set :linked_files, %w[config/master.key config/database.yml]
+set :linked_files, %w[config/database.yml]
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
