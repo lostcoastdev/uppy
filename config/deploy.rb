@@ -7,7 +7,7 @@ lock '~> 3.16.0'
 server '64.227.3.155', port: 22, roles: %i[web app db], primary: true
 
 set :rbenv_type, :user
-set :rbenv_ruby, '3.0.0'
+set :rbenv_ruby, '2.7.2'
 set :rbenv_prefix,
     "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_roles, :all
