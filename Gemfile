@@ -78,6 +78,11 @@ gem 'sidekiq', '~> 6.0', '>= 6.0.3'
 gem 'sitemap_generator', '~> 6.0', '>= 6.0.1'
 gem 'whenever', require: false
 
+gem "shrine", "~> 3.0"
+gem "aws-sdk-s3", "~> 1.14"
+gem "tus-server", "~> 2.3"
+gem "shrine-tus", "~> 2.1"
+
 group :production do
   gem 'pg'
 end

@@ -1,0 +1,29 @@
+<div class="page-header">
+  <%= link_to movies_path, class: 'btn btn-default' do %>
+    All Movies
+  <% end %>
+  <%= link_to edit_movie_path(@movie), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show movie</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Title:</dt>
+  <dd><%= @movie.title %></dd>
+  <dt>Data:</dt>
+  <dd><%= @movie.video_data %></dd>
+  <%# if @movie.video(:screenshot) %>
+    <%# if Rails.env.production? %>
+<!--      <dd><%#= image_tag "https://streamchute.sfo2.cdn.digitaloceanspaces.com/videos/#{@movie.video(:screenshot).id}", height: "200" %></dd>-->
+<!--      <br>-->
+<!--      <dd><%#= video_tag "https://streamchute.sfo2.cdn.digitaloceanspaces.com/videos/#{@movie.video(:transcoded).id}", height: "300", controls: true %></dd>-->
+    <%# else %>
+<!--      <dd><%#= image_tag "/uploads/#{@movie.video(:screenshot).id}", height: "200" %></dd>-->
+<!--      <br>-->
+<!--      <dd><%#= video_tag "/uploads/#{@movie.video(:transcoded).id}", height: "300", controls: true %></dd>-->
+    <%# end %>
+  <%# else %>
+<!--    <dd>Video is processing..</dd>-->
+  <%# end %>
+</dl>

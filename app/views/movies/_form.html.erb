@@ -1,0 +1,45 @@
+<%= form_with(model: movie, local: true) do |form| %>
+  <% if movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+        <% movie.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group" data-uppy="movie[video]">
+    <%= form.label :video %>
+    <div>
+
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpj0DBTVsaja01_xWh37bcutvpd7rh7zEd528HD0d_l6A73osY" width="280" data-behavior="uppy-preview"/>
+
+    </div>
+    <%= form.hidden_field :video, value: @movie.cached_video_data, class: "upload-data" %>
+    <%= link_to "Upload", "#", data: { behavior: "uppy-trigger" } %>
+  </div>
+
+  <div class="form-group">
+    <% if movie.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', movie, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if movie.persisted? %>
+      <%= link_to "Cancel", movie, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", movies_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

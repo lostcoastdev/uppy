@@ -15,7 +15,7 @@ set :rbenv_roles, :all
 set :application, 'uppy'
 set :repo_url, 'git@lostcoastdev:lostcoastdev/uppy.git'
 set :user, 'edward'
-set :branch, 'main'
+set :branch, 'uppy-video'
 
 set :init_system, :systemd
 set :puma_threads, [4, 16]
