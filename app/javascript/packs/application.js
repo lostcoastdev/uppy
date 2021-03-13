@@ -22,6 +22,7 @@ $(document).on("turbolinks:load", () => {
 const Uppy = require('@uppy/core')
 const Tus = require(('@uppy/tus'))
 const Dashboard = require('@uppy/dashboard')
+const Dropbox = require('@uppy/dropbox')
 const ActiveStorageUpload = require('@excid3/uppy-activestorage-upload')
 
 require('@uppy/core/dist/style.css')
@@ -51,7 +52,7 @@ function setupUppy(element) {
     // })
 
     uppy.use(Tus, {
-        endpoint: '/files',     // path to our tus server
+        endpoint: 'https://uppy.streamshoot.com/files',     // path to our tus server
         chunkSize: 5 * 1024 * 1024, // required unless tus-ruby-server is running on Falcon
     })
 
@@ -59,6 +60,12 @@ function setupUppy(element) {
         trigger: trigger,
         closeAfterFinish: true,
     })
+
+    uppy.use(Dropbox, {
+        target: Dashboard,
+        companionUrl: 'https://companion.streamshoot.com'
+    })
+
 
     // uppy.on('complete', (result) => {
     //     // Rails.ajax

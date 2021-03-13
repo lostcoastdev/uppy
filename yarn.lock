@@ -999,6 +999,16 @@
     preact "8.2.9"
     resize-observer-polyfill "^1.5.0"
 
+"@uppy/dropbox@^1.4.25":
+  version "1.4.25"
+  resolved "https://registry.yarnpkg.com/@uppy/dropbox/-/dropbox-1.4.25.tgz#ad51ddc5f0438eda8c73ba74bfa0900be3f6cb4d"
+  integrity sha512-+0BCZHMwiGvXJ4zdCqrTqb57mrdbyjDFCsb8SRGvQ29LdBfqwpnRGmzAk9gNq4DOWcVfwBJU5hs/FBHPlhaBIg==
+  dependencies:
+    "@uppy/companion-client" "^1.8.3"
+    "@uppy/provider-views" "^1.11.2"
+    "@uppy/utils" "^3.4.2"
+    preact "8.2.9"
+
 "@uppy/informer@^1.6.2":
   version "1.6.2"
   resolved "https://registry.yarnpkg.com/@uppy/informer/-/informer-1.6.2.tgz#81f4046c02e48de411156c4db2a9550890b1a66b"
